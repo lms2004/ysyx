@@ -1,0 +1,35 @@
+1.创建目标all:ex1，可以以单个命令make构建ex1。
+OK
+
+2.阅读man make来了解关于如何执行它的更多信息。
+OK
+
+3.阅读man cc来了解关于-Wall和-g行为的更多信息。
+
+4.在互联网上搜索Makefile文件，看看你是否能改进你的文件。
+
+1. 变量定义
+CFLAGS = -Wall -g：编译选项，启用所有警告并生成调试信息。
+CC = gcc：使用的编译器。
+TARGET = ex1：生成的目标文件名称。
+
+2. 默认目标
+all: $(TARGET)：默认目标，生成可执行文件 ex1。
+
+3. 生成可执行文件的规则
+$(TARGET): $(TARGET).o：生成 ex1 依赖 ex1.o。
+$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).o：将 ex1.o 链接为 ex1。
+
+4. 编译源文件生成目标文件的规则
+$(TARGET).o: $(TARGET).c：生成 ex1.o 依赖 ex1.c。
+$(CC) $(CFLAGS) -c $(TARGET).c -o $(TARGET).o：将 ex1.c 编译为 ex1.o。
+
+5. 清理规则
+clean：定义清理生成文件的规则。
+rm -f $(TARGET) $(TARGET).o：删除 ex1 和 ex1.o，保持项目目录整洁。
+
+6. 伪目标
+.PHONY: all clean：声明 all 和 clean 为伪目标，避免与实际文件名冲突，确保按预期执行。
+
+
+5.在另一个C语言项目中找到Makefile文件，并且尝试理解它做了什么。
