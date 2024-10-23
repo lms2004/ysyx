@@ -1,0 +1,3 @@
+[submodule "ysyx-workbench"]
+	path = ysyx-workbench
+	url = git@github.com:lms2004/ysyx-workbench.git
