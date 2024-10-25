@@ -1,3 +1,6 @@
 [submodule "ysyx-workbench"]
 	path = ysyx-workbench
 	url = git@github.com:lms2004/ysyx-workbench.git
+[submodule "yosys-sta"]
+	path = yosys-sta
+	url = git@github.com:OSCPU/yosys-sta.git
